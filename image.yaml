@@ -1,0 +1,28 @@
+name: "jboss-datavirt-6/datavirt63"
+version: "6.3.5"
+from: "jboss-eap-6/eap64:latest"
+user: 185
+envs:
+    information:
+        - name: "JBOSS_PRODUCT"
+          value: "datavirt"
+        - name: "JBOSS_DATAVIRT_VERSION"
+          value: "6.3.5.GA"
+        - name: "PRODUCT_VERSION"
+          value: "6.3.5.GA"
+cmd:
+    - "/opt/eap/bin/standalone.sh"
+    - "-b"
+    - "0.0.0.0"
+    - "-c"
+    - "standalone.xml"
+scripts:
+    - package: jdv
+      exec: install
+sources:
+    - url: jboss-dv-6.3.0-installer.jar
+      md5sum: 74510020b61e047e5930e89141201ea1
+    - url: jboss-dv-6.3.5-patch.jar
+      md5sum: 6e2febdab8389ac30e0869a5338b7471
+dogen:
+    version: 2.0.0rc15

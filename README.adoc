@@ -1,0 +1,8 @@
+# Red Hat JBoss Data Virtualization 6.3 container image
+
+NOTE: Extends link:https://github.com/jboss-container-images/jboss-eap-6-image[JBoss EAP 6]
+
+# License
+
+See link:LICENSE[LICENSE] file.
+

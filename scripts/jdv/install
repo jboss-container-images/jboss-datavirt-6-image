@@ -1,0 +1,33 @@
+#!/bin/bash
+
+set -e
+
+SOURCES_DIR=/tmp/artifacts/
+
+# Workaround for JDV installer
+version=$(cat ${JBOSS_HOME}/version.txt)
+echo "Red Hat JBoss Enterprise Application Platform - Version 6.4.9.GA" > ${JBOSS_HOME}/version.txt
+
+java -jar ${SOURCES_DIR}/jboss-dv-6.3.0-installer.jar /tmp/scripts/jdv/added/install.xml 
+java -jar ${SOURCES_DIR}/jboss-dv-6.3.5-patch.jar --server ${JBOSS_HOME} --install jboss-dv-6.3.5
+
+echo $version > ${JBOSS_HOME}/version.txt
+
+chown -R jboss:root $JBOSS_HOME
+chmod 0755 $JBOSS_HOME
+chmod -R g+rwX $JBOSS_HOME
+
+rm -rf ${JBOSS_HOME}/standalone/log
+rm -rf ${JBOSS_HOME}/installation
+
+find ${JBOSS_HOME} -name "*xml_history*" | xargs rm -rf
+rm -rf ${JBOSS_HOME}/domain/log/*
+rm -rf ${JBOSS_HOME}/standalone/data/*
+rm -rf ${JBOSS_HOME}/fusepatch
+rm -rf ${JBOSS_HOME}/quickstarts
+rm -rf ${JBOSS_HOME}/dataVirtualization/jdbc
+rm -rf ${JBOSS_HOME}/dataVirtualization/logging
+rm -rf ${JBOSS_HOME}/.installation
+
+unzip ${JBOSS_HOME}/dataVirtualization/teiid-adminshell/*.zip -d $JBOSS_HOME
+rm -rf ${JBOSS_HOME}/dataVirtualization/teiid-adminshell 
