@@ -13,10 +13,6 @@ java -jar ${SOURCES_DIR}/jboss-dv-6.3.5-patch.jar --server ${JBOSS_HOME} --insta
 
 echo $version > ${JBOSS_HOME}/version.txt
 
-chown -R jboss:root $JBOSS_HOME
-chmod 0755 $JBOSS_HOME
-chmod -R g+rwX $JBOSS_HOME
-
 rm -rf ${JBOSS_HOME}/standalone/log
 rm -rf ${JBOSS_HOME}/installation
 
@@ -31,3 +27,7 @@ rm -rf ${JBOSS_HOME}/.installation
 
 unzip ${JBOSS_HOME}/dataVirtualization/teiid-adminshell/*.zip -d $JBOSS_HOME
 rm -rf ${JBOSS_HOME}/dataVirtualization/teiid-adminshell 
+
+chown -R jboss:root $JBOSS_HOME
+chmod 0755 $JBOSS_HOME
+chmod -R g+rwX $JBOSS_HOME
