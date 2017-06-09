@@ -1,15 +1,15 @@
 name: "jboss-datavirt-6/datavirt63"
 description: "Red Hat JBoss Data Virtualization 6.3 container image"
-version: "6.3.5"
+version: "6.3.6"
 from: "jboss-eap-6/eap64:latest"
 user: 185
 envs:
     - name: "JBOSS_PRODUCT"
       value: "datavirt"
     - name: "JBOSS_DATAVIRT_VERSION"
-      value: "6.3.5.GA"
+      value: "6.3.6.GA"
     - name: "PRODUCT_VERSION"
-      value: "6.3.5.GA"
+      value: "6.3.6.GA"
 cmd:
     - "/opt/eap/bin/standalone.sh"
     - "-b"
@@ -24,8 +24,7 @@ sources:
       md5: 74510020b61e047e5930e89141201ea1
       # TODO: update link to point to the correct file
       hint: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=data.services.platform&downloadType=distributions&version=6.3.0"
-    - artifact: jboss-dv-6.3.5-patch.jar
-      md5: 6e2febdab8389ac30e0869a5338b7471
-      hint: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=50921&product=data.services.platform&version=6.3.0&downloadType=patches"
+    - artifact: jboss-dv-6.3.6-patch.jar # Based on CR3
+      md5: 76330818a7947a685fb915ac01580e43
 dogen:
     version: 2.0.0
