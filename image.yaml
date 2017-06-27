@@ -28,4 +28,8 @@ sources:
       md5: 6e2febdab8389ac30e0869a5338b7471
       hint: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=50921&product=data.services.platform&version=6.3.0&downloadType=patches"
 dogen:
-    version: 2.0.0
+    version: 2.1.0
+    plugins:
+        dist_git:
+            repo: jboss-datavirt-6-docker
+            branch: jb-datavirt63
