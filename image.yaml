@@ -23,7 +23,7 @@ sources:
     - artifact: jboss-dv-6.3.0-1-installer.jar
       md5: f88f9106745f913c9e2e158cd28eebf7
       # TODO: update link to point to the correct file
-      hint: "https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=45751&product=data.services.platform&version=6.3.0&downloadType=distributions"
+      hint: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=45751&product=data.services.platform&version=6.3.0&downloadType=distributions"
     - artifact: jboss-dv-6.3.6-patch.jar # Based on CR3
       md5: 76330818a7947a685fb915ac01580e43
 dogen:
