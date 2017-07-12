@@ -8,7 +8,7 @@ SOURCES_DIR=/tmp/artifacts/
 version=$(cat ${JBOSS_HOME}/version.txt)
 echo "Red Hat JBoss Enterprise Application Platform - Version 6.4.9.GA" > ${JBOSS_HOME}/version.txt
 
-java -jar ${SOURCES_DIR}/jboss-dv-6.3.0-1-installer.jar /tmp/scripts/jdv/added/install.xml 
+java -jar ${SOURCES_DIR}/jboss-dv-6.3.0-installer.jar /tmp/scripts/jdv/added/install.xml 
 java -jar ${SOURCES_DIR}/jboss-dv-6.3.5-patch.jar --server ${JBOSS_HOME} --install jboss-dv-6.3.5
 
 echo $version > ${JBOSS_HOME}/version.txt

@@ -20,8 +20,8 @@ scripts:
     - package: jdv
       exec: install
 sources:
-    - artifact: jboss-dv-6.3.0-1-installer.jar
-      md5: f88f9106745f913c9e2e158cd28eebf7
+    - artifact: jboss-dv-6.3.0-installer.jar
+      md5: 74510020b61e047e5930e89141201ea1
       # TODO: update link to point to the correct file
       hint: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=data.services.platform&downloadType=distributions&version=6.3.0"
     - artifact: jboss-dv-6.3.5-patch.jar
