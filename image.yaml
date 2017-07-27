@@ -27,7 +27,7 @@ sources:
     - artifact: jboss-dv-6.3.6-patch.jar # Based on CR3
       md5: 76330818a7947a685fb915ac01580e43
 dogen:
-    version: 2.3.0
+    version: 2.4.0
     plugins:
         dist_git:
             repo: jboss-datavirt-6-docker
