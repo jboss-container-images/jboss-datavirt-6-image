@@ -7,9 +7,9 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "datavirt"
     - name: "JBOSS_DATAVIRT_VERSION"
-      value: "6.3.7.CR1"
+      value: "6.3.7.GA"
     - name: "PRODUCT_VERSION"
-      value: "6.3.7.CR1"
+      value: "6.3.7.GA"
 cmd:
     - "/opt/eap/bin/standalone.sh"
     - "-b"
