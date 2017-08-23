@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <AutomatedInstallation langpack="eng">
 <productName>DV</productName>
-<productVersion>6.3.0</productVersion>
+<productVersion>6.4.0</productVersion>
 <com.izforge.izpack.panels.HTMLLicencePanel id="HTMLLicencePanel"/>
 <com.izforge.izpack.panels.TargetPanel id="DirectoryPanel">
 <installpath>/opt/eap</installpath>
@@ -9,9 +9,10 @@
 <com.izforge.izpack.panels.TreePacksPanel id="TreePacksPanel">
 <pack index="0" name="Red Hat JBoss Enterprise Application Platform" selected="true"/>
 <pack index="1" name="Red Hat JBoss DV Platform" selected="true"/>
-<pack index="2" name="EAP Patch" selected="true"/>
-<pack index="3" name="Teiid" selected="true"/>
-<pack index="4" name="ModeShape" selected="true"/>
+<pack index="2" name="Teiid" selected="true"/>
+<pack index="3" name="Dashboard Builder" selected="true"/>
+<pack index="4" name="Data Services Builder" selected="false"/>
+<pack index="5" name="ModeShape" selected="false"/>
 </com.izforge.izpack.panels.TreePacksPanel>
 <com.izforge.izpack.panels.UserInputPanel id="security">
 <userInput>
@@ -25,8 +26,6 @@
 <entry key="Teiid.user.password" value="P@ssword1"/>
 <entry key="Teiid.user.odata" value=""/>
 <entry key="Teiid.user.logging" value=""/>
-<entry key="Modeshape.user" value="modeshapeUser"/>
-<entry key="Modeshape.password" value="P@ssword1"/>
 </userInput>
 </com.izforge.izpack.panels.UserInputPanel>
 <com.izforge.izpack.panels.UserInputPanel id="postinstall">
@@ -45,8 +44,10 @@
 <com.redhat.installer.asconfiguration.jdbc.panel.JBossJDBCDriverSetupPanel id="jdbc.panel"/>
 <com.izforge.izpack.panels.UserInputPanel id="dblogging.panel"/>
 <com.izforge.izpack.panels.UserInputPanel id="javaopts.panel"/>
+<com.izforge.izpack.panels.UserInputPanel id="ssl.panel"/>
 <com.izforge.izpack.panels.SummaryPanel id="SummaryPanel"/>
 <com.izforge.izpack.panels.InstallPanel id="InstallPanel"/>
 <com.izforge.izpack.panels.ProcessPanel id="ProcessPanel"/>
 <com.izforge.izpack.panels.FinishPanel id="FinishPanel"/>
 </AutomatedInstallation>
+

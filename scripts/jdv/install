@@ -5,13 +5,12 @@ set -e
 SOURCES_DIR=/tmp/artifacts/
 
 # Workaround for JDV installer
-version=$(cat ${JBOSS_HOME}/version.txt)
-echo "Red Hat JBoss Enterprise Application Platform - Version 6.4.9.GA" > ${JBOSS_HOME}/version.txt
+#version=$(cat ${JBOSS_HOME}/version.txt)
+#echo "Red Hat JBoss Enterprise Application Platform - Version 6.4.9.GA" > ${JBOSS_HOME}/version.txt
 
-java -jar ${SOURCES_DIR}/jboss-dv-6.3.0-1-installer.jar /tmp/scripts/jdv/added/install.xml 
-java -jar ${SOURCES_DIR}/jboss-dv-6.3.7-patch.jar --server ${JBOSS_HOME} --install jboss-dv-6.3.7
+java -jar ${SOURCES_DIR}/jboss-dv-6.4.0.ER2-installer.jar /tmp/scripts/jdv/added/install.xml 
 
-echo $version > ${JBOSS_HOME}/version.txt
+#echo $version > ${JBOSS_HOME}/version.txt
 
 rm -rf ${JBOSS_HOME}/standalone/log
 rm -rf ${JBOSS_HOME}/installation
@@ -27,6 +26,8 @@ rm -rf ${JBOSS_HOME}/.installation
 
 unzip ${JBOSS_HOME}/dataVirtualization/teiid-adminshell/*.zip -d $JBOSS_HOME
 rm -rf ${JBOSS_HOME}/dataVirtualization/teiid-adminshell 
+
+find ${JBOSS_HOME} -name "javax.script.ScriptEngineFactory" | xargs sed -i "s|com.sun.script.javascript.RhinoScriptEngineFactory|jdk.nashorn.api.scripting.NashornScriptEngineFactory|" 
 
 chown -R jboss:root $JBOSS_HOME
 chmod 0755 $JBOSS_HOME
