@@ -1,25 +1,22 @@
 schema_version: 1
 
-name: "jboss-datavirt-6/datavirt63"
-description: "Red Hat JBoss Data Virtualization 6.3 container image"
-version: "6.3.8"
+name: "jboss-datavirt-6/datavirt64"
+description: "Red Hat JBoss Data Virtualization 6.4 container image"
+version: "6.4.0"
 from: "jboss-eap-6/eap64:latest"
 envs:
     - name: "JBOSS_PRODUCT"
       value: "datavirt"
     - name: "JBOSS_DATAVIRT_VERSION"
-      value: "6.3.8.GA"
+      value: "6.4.0.GA"
     - name: "PRODUCT_VERSION"
-      value: "6.3.8.GA"
+      value: "6.4.0.GA"
 modules:
       install:
           - name: jdv
 artifacts:
-    - path: jboss-dv-6.3.0-1-installer.jar
-      description: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=45751&product=data.services.platform&version=6.3.0&downloadType=distributions"
-      md5: f88f9106745f913c9e2e158cd28eebf7
-    - path: jboss-dv-6.3.8-patch.jar
-      md5: 6cf74bf91fa6cbcf46667e863ec0f6d9
+    - path: jboss-dv-installer-6.4.0.ER2-redhat-1.jar
+      md5: 934d341c6fb31ac0c0c2dd0cfa329408
 run:
       user: 185
       cmd:
@@ -31,4 +28,4 @@ run:
 osbs:
       repository:
             name: jboss-datavirt-6-docker
-            branch: jb-datavirt63
+            branch: jb-datavirt64

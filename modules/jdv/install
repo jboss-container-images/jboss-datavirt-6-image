@@ -6,12 +6,8 @@ SOURCES_DIR=/tmp/artifacts/
 
 # Workaround for JDV installer
 version=$(cat ${JBOSS_HOME}/version.txt)
-echo "Red Hat JBoss Enterprise Application Platform - Version 6.4.9.GA" > ${JBOSS_HOME}/version.txt
 
-java -jar ${SOURCES_DIR}/jboss-dv-6.3.0-1-installer.jar /tmp/scripts/jdv/added/install.xml 
-java -jar ${SOURCES_DIR}/jboss-dv-6.3.8-patch.jar --server ${JBOSS_HOME} --install jboss-dv-6.3.8
-
-echo $version > ${JBOSS_HOME}/version.txt
+java -jar ${SOURCES_DIR}/jboss-dv-installer-6.4.0.ER2-redhat-1.jar /tmp/scripts/jdv/added/install.xml 
 
 rm -rf ${JBOSS_HOME}/standalone/log
 rm -rf ${JBOSS_HOME}/installation

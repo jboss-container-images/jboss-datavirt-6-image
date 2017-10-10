@@ -1,4 +1,4 @@
-@jboss-datavirt-6/datavirt63
+@jboss-datavirt-6/datavirt64
 Feature: Standalone Datavirt tests
 
   Scenario: Test console is available
