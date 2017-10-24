@@ -7,7 +7,7 @@ SOURCES_DIR=/tmp/artifacts/
 # Workaround for JDV installer
 version=$(cat ${JBOSS_HOME}/version.txt)
 
-java -jar ${SOURCES_DIR}/jboss-dv-installer-6.4.0.ER2-redhat-1.jar /tmp/scripts/jdv/added/install.xml 
+java -jar ${SOURCES_DIR}/jboss-dv-6.4.0.ER3-installer.jar /tmp/scripts/jdv/added/install.xml 
 
 rm -rf ${JBOSS_HOME}/standalone/log
 rm -rf ${JBOSS_HOME}/installation
