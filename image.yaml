@@ -22,8 +22,8 @@ modules:
       install:
           - name: jdv
 artifacts:
-    - path: jboss-dv-installer-6.4.0.ER2-redhat-1.jar
-      md5: 934d341c6fb31ac0c0c2dd0cfa329408
+    - path: jboss-dv-6.4.0.ER3-installer.jar
+      md5: 971e47b8a9a4618f7ae76c909e95ca97
 run:
       user: 185
       cmd:
