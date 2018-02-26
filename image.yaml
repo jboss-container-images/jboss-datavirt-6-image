@@ -40,4 +40,4 @@ run:
 osbs:
       repository:
             name: jboss-datavirt-6-docker
-            branch: jb-datavirt63
+            branch: jb-datavirt-6.3-rhel-7
