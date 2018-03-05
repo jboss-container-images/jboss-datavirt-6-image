@@ -5,6 +5,8 @@ description: "Red Hat JBoss Data Virtualization 6.3 container image"
 version: "6.3.8"
 from: "jboss-eap-6/eap64:latest"
 labels:
+    - name: "com.redhat.component"
+      value: "jboss-datavirt-6-datavirt63-container"
     - name: "org.jboss.product"
       value: "datavirt"
     - name: "org.jboss.product.version"
@@ -39,5 +41,5 @@ run:
           - "standalone.xml"
 osbs:
       repository:
-            name: jboss-datavirt-6-docker
+            name: containers/jboss-datavirt-6
             branch: jb-datavirt-6.3-rhel-7
