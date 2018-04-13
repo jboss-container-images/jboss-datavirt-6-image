@@ -1,0 +1,4 @@
+osbs:
+      repository:
+            name: containers/jboss-datavirt-6
+            branch: jb-datavirt-6.4-cp-rhel-7
