@@ -2,23 +2,34 @@ schema_version: 1
 
 name: "jboss-datavirt-6/datavirt64"
 description: "Red Hat JBoss Data Virtualization 6.4 container image"
-version: "6.4.0"
-from: "jboss-eap-6/eap64:latest"
+version: "6.4.1"
+from: "jboss-eap-6/eap64:6.4.19-13"
+labels:
+    - name: "com.redhat.component"
+      value: "jboss-datavirt-6-datavirt64-container"
+    - name: "org.jboss.product"
+      value: "datavirt"
+    - name: "org.jboss.product.version"
+      value: "6.4.1.GA"
+    - name: "org.jboss.product.datavirt.version"
+      value: "6.4.1.GA"
 envs:
     - name: "JBOSS_PRODUCT"
       value: "datavirt"
     - name: "JBOSS_DATAVIRT_VERSION"
-      value: "6.4.0.GA"
+      value: "6.4.1.GA"
     - name: "PRODUCT_VERSION"
-      value: "6.4.0.GA"
+      value: "6.4.1.GA"
 modules:
       repositories:
           - path: modules
       install:
           - name: jdv
 artifacts:
-    - path: jboss-dv-installer-6.4.0.ER2-redhat-1.jar
-      md5: 934d341c6fb31ac0c0c2dd0cfa329408
+    - path: jboss-dv-6.4.0-installer.jar
+      md5: 5a9c1a24917c6194b6f93e92fc5e0fd8
+    - path: jboss-dv-6.4.1-patch.jar
+      md5: fb31a93c41d83cadfe037c76d8ca0d5f
 run:
       user: 185
       cmd:
@@ -29,5 +40,5 @@ run:
           - "standalone.xml"
 osbs:
       repository:
-            name: jboss-datavirt-6-docker
-            branch: jb-datavirt64
+            name: containers/jboss-datavirt-6
+            branch: jb-datavirt-6.4-rhel-7
