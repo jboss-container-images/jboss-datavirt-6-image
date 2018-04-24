@@ -7,7 +7,12 @@ SOURCES_DIR=/tmp/artifacts/
 # Workaround for JDV installer
 version=$(cat ${JBOSS_HOME}/version.txt)
 
-java -jar ${SOURCES_DIR}/jboss-dv-6.4.0-installer.jar /tmp/scripts/jdv/added/install.xml 
+# Workaround for OpenJDK multiple CVEs (CVE-2018-2790, CVE-2018-2794, CVE-2018-2795, CVE-2018-2796, CVE-2018-2797, CVE-2018-2798, CVE-2018-2799, CVE-2018-2800, CVE-2018-2814, CVE-2018-2815) 
+sed -i 's|#PRESERVE_JAVA_OPTS=true|#PRESERVE_JAVA_OPTS=true\nJBOSS_MODULES_SYSTEM_PKGS="$JBOSS_MODULES_SYSTEM_PKGS,jdk.nashorn.api,com.sun.crypto.provider"|' ${JBOSS_HOME}/bin/standalone.conf
+sed -i 's|#JAVA=""|#JAVA=""\nJBOSS_MODULES_SYSTEM_PKGS="jdk.nashorn.api,com.sun.crypto.provider"|' ${JBOSS_HOME}/bin/domain.conf
+sed -i 's|<module name="org.jboss.modules"/>|<module name="org.jboss.modules"/>\n\t<module name="sun.jdk"/>|' ${JBOSS_HOME}/modules/system/layers/base/org/picketbox/main/module.xml
+
+java -jar ${SOURCES_DIR}/jboss-dv-6.4.0-installer.jar /tmp/scripts/jdv/added/install.xml
 java -jar ${SOURCES_DIR}/jboss-dv-6.4.2-patch.jar --server ${JBOSS_HOME} --install jboss-dv-6.4.2
 
 rm -rf ${JBOSS_HOME}/standalone/log
