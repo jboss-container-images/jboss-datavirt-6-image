@@ -29,7 +29,7 @@ artifacts:
     - path: jboss-dv-6.4.0-installer.jar
       md5: 5a9c1a24917c6194b6f93e92fc5e0fd8
     - path: jboss-dv-6.4.2-patch.jar
-      md5: af1eb477d562c44702217d262b5bfaba
+      md5: 8c491ad0f1aea4ed91e89e75631c0f95 
 run:
       user: 185
       cmd:
