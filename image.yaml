@@ -30,6 +30,9 @@ artifacts:
       md5: 5a9c1a24917c6194b6f93e92fc5e0fd8
     - path: jboss-dv-6.4.3-patch.jar
       md5: e6b40e88a12f8cdc6af954d0a55114a1 
+    - path: jboss-datagrid-7.1.2-eap-modules-remote-java-client.zip
+      md5: dc43e49cddeb1d4ddefdd99e577e4b43
+      description: "Red Hat JBoss Data Grid 7.1.2 Remote Client"
 run:
       user: 185
       cmd:
