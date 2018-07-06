@@ -3,7 +3,7 @@ schema_version: 1
 name: "jboss-datavirt-6/datavirt64"
 description: "Red Hat JBoss Data Virtualization 6.4 container image"
 version: "6.4.2"
-from: "jboss-eap-6/eap64:6.4.20-6"
+from: "jboss-eap-6/eap64:6.4.20-5"
 labels:
     - name: "com.redhat.component"
       value: "jboss-datavirt-6-datavirt64-container"
@@ -29,7 +29,10 @@ artifacts:
     - path: jboss-dv-6.4.0-installer.jar
       md5: 5a9c1a24917c6194b6f93e92fc5e0fd8
     - path: jboss-dv-6.4.2-patch.jar
-      md5: 8c491ad0f1aea4ed91e89e75631c0f95 
+      md5: 8c491ad0f1aea4ed91e89e75631c0f95
+    - path: jboss-datagrid-7.1.2-eap-modules-remote-java-client.zip
+      md5: dc43e49cddeb1d4ddefdd99e577e4b43
+      description: "Red Hat JBoss Data Grid 7.1.2 Remote Client"
 run:
       user: 185
       cmd:
