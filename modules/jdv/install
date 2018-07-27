@@ -13,7 +13,7 @@ sed -i 's|#JAVA=""|#JAVA=""\nJBOSS_MODULES_SYSTEM_PKGS="jdk.nashorn.api,com.sun.
 sed -i 's|<module name="org.jboss.modules"/>|<module name="org.jboss.modules"/>\n\t<module name="sun.jdk"/>|' ${JBOSS_HOME}/modules/system/layers/base/org/picketbox/main/module.xml
 
 java -jar ${SOURCES_DIR}/jboss-dv-6.4.0-installer.jar /tmp/scripts/jdv/added/install.xml 
-java -jar ${SOURCES_DIR}/jboss-dv-6.4.2-patch.jar --server ${JBOSS_HOME} --install jboss-dv-6.4.2
+java -jar ${SOURCES_DIR}/jboss-dv-6.4.3-patch.jar --server ${JBOSS_HOME} --install jboss-dv-6.4.3
 
 rm -rf ${JBOSS_HOME}/standalone/log
 rm -rf ${JBOSS_HOME}/installation
@@ -29,6 +29,12 @@ rm -rf ${JBOSS_HOME}/.installation
 
 unzip ${JBOSS_HOME}/dataVirtualization/teiid-adminshell/*.zip -d $JBOSS_HOME
 rm -rf ${JBOSS_HOME}/dataVirtualization/teiid-adminshell 
+
+JDG_CLIENT=jboss-datagrid-7.1.2-eap-modules-remote-java-client
+
+unzip ${SOURCES_DIR}/${JDG_CLIENT}.zip -d $JBOSS_HOME
+cp -r ${JBOSS_HOME}/${JDG_CLIENT}/modules ${JBOSS_HOME}
+rm -rf ${JBOSS_HOME}/${JDG_CLIENT}
 
 chown -R jboss:root $JBOSS_HOME
 chmod 0755 $JBOSS_HOME
