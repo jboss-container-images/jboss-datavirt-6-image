@@ -8,7 +8,7 @@ SOURCES_DIR=/tmp/artifacts/
 version=$(cat ${JBOSS_HOME}/version.txt)
 
 java -jar ${SOURCES_DIR}/jboss-dv-6.4.0-installer.jar /tmp/scripts/jdv/added/install.xml 
-java -jar ${SOURCES_DIR}/jboss-dv-6.4.4-patch.jar --server ${JBOSS_HOME} --install jboss-dv-6.4.4
+java -jar ${SOURCES_DIR}/jboss-dv-6.4.5-patch.jar --server ${JBOSS_HOME} --install jboss-dv-6.4.5
 
 rm -rf ${JBOSS_HOME}/standalone/log
 rm -rf ${JBOSS_HOME}/installation
@@ -25,7 +25,7 @@ rm -rf ${JBOSS_HOME}/.installation
 unzip ${JBOSS_HOME}/dataVirtualization/teiid-adminshell/*.zip -d $JBOSS_HOME
 rm -rf ${JBOSS_HOME}/dataVirtualization/teiid-adminshell 
 
-JDG_CLIENT=jboss-datagrid-7.1.2-eap-modules-remote-java-client
+JDG_CLIENT=jboss-datagrid-7.2.3-eap-modules-remote-java-client
 
 unzip ${SOURCES_DIR}/${JDG_CLIENT}.zip -d $JBOSS_HOME
 cp -r ${JBOSS_HOME}/${JDG_CLIENT}/modules ${JBOSS_HOME}
