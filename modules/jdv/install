@@ -8,7 +8,7 @@ SOURCES_DIR=/tmp/artifacts/
 version=$(cat ${JBOSS_HOME}/version.txt)
 
 java -jar ${SOURCES_DIR}/jboss-dv-6.4.0-installer.jar /tmp/scripts/jdv/added/install.xml 
-java -jar ${SOURCES_DIR}/jboss-dv-6.4.4-patch.jar --server ${JBOSS_HOME} --install jboss-dv-6.4.4
+java -jar ${SOURCES_DIR}/jboss-dv-6.4.5-patch.jar --server ${JBOSS_HOME} --install jboss-dv-6.4.5
 
 rm -rf ${JBOSS_HOME}/standalone/log
 rm -rf ${JBOSS_HOME}/installation
