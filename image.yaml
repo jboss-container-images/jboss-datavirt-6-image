@@ -20,6 +20,8 @@ envs:
       value: "6.4.5.GA"
     - name: "PRODUCT_VERSION"
       value: "6.4.5.GA"
+packages:
+  content_sets_file: content_sets.yml
 modules:
       repositories:
           - path: modules
@@ -42,6 +44,8 @@ run:
           - "-c"
           - "standalone.xml"
 osbs:
+      configuration:
+            container_file: container.yaml
       repository:
             name: containers/jboss-datavirt-6
             branch: jb-datavirt-6.4-rhel-7
