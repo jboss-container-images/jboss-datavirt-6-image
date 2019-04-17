@@ -2,7 +2,7 @@ schema_version: 1
 
 name: "jboss-datavirt-6/datavirt64"
 description: "Red Hat JBoss Data Virtualization 6.4 container image"
-version: "6.4.6"
+version: "6.4.7"
 from: "jboss-eap-6/eap64:6.4.21-11"
 labels:
     - name: "com.redhat.component"
@@ -10,16 +10,16 @@ labels:
     - name: "org.jboss.product"
       value: "datavirt"
     - name: "org.jboss.product.version"
-      value: "6.4.6.GA"
+      value: "6.4.7.GA"
     - name: "org.jboss.product.datavirt.version"
-      value: "6.4.6.GA"
+      value: "6.4.7.GA"
 envs:
     - name: "JBOSS_PRODUCT"
       value: "datavirt"
     - name: "JBOSS_DATAVIRT_VERSION"
-      value: "6.4.6.GA"
+      value: "6.4.7.GA"
     - name: "PRODUCT_VERSION"
-      value: "6.4.6.GA"
+      value: "6.4.7.GA"
 packages:
   content_sets_file: content_sets.yml
 modules:
@@ -33,9 +33,12 @@ artifacts:
     - name: jboss-dv-6.4.6-patch
       target: jboss-dv-6.4.6-patch.jar
       md5: a595781c29da6a933572642bc7476a23
-    - name: jboss-datagrid-7.2.0-eap-modules-remote-java-client.zip
-      md5: 97e3768762992a26eda6e11d0ecb745c
-      description: "Red Hat JBoss Data Grid 7.2 Remote Client"
+    - name: jboss-dv-6.4.7-patch
+      target: jboss-dv-6.4.7-patch.jar
+      md5: c1aa9ace45a66e9ed0c7b1c3bfa62def
+    - path: jboss-datagrid-7.3.0-1-eap-modules.zip
+      md5: 40597be0399147c99af23c292b65949b
+      description: "Red Hat JBoss Data Grid 7.3 JDG Client"
 run:
       user: 185
       cmd:
