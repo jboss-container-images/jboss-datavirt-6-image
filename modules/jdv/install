@@ -26,10 +26,8 @@ rm -rf ${JBOSS_HOME}/.installation
 unzip ${JBOSS_HOME}/dataVirtualization/teiid-adminshell/*.zip -d $JBOSS_HOME
 rm -rf ${JBOSS_HOME}/dataVirtualization/teiid-adminshell 
 
-JDG_CLIENT=jboss-datagrid-7.3.0-1-eap-modules
-JDG_FOLDER=jboss-datagrid-7.3.0-eap-modules
-
-unzip ${SOURCES_DIR}/${JDG_CLIENT}.zip -d $JBOSS_HOME
+JDG_FOLDER=jboss-datagrid-7.3.1-eap-modules
+unzip ${SOURCES_DIR}/${JDG_FOLDER}.zip -d $JBOSS_HOME
 cp -r ${JBOSS_HOME}/${JDG_FOLDER}/modules ${JBOSS_HOME}
 rm -rf ${JBOSS_HOME}/${JDG_FOLDER}
 
