@@ -2,7 +2,7 @@ schema_version: 1
 
 name: "jboss-datavirt-6/datavirt64"
 description: "Red Hat JBoss Data Virtualization 6.4 container image"
-version: "6.4.7"
+version: "6.4.8"
 from: "jboss-eap-6/eap64:6.4.22-2.1561730864"
 labels:
     - name: "com.redhat.component"
@@ -10,16 +10,16 @@ labels:
     - name: "org.jboss.product"
       value: "datavirt"
     - name: "org.jboss.product.version"
-      value: "6.4.7.GA"
+      value: "6.4.8.GA"
     - name: "org.jboss.product.datavirt.version"
-      value: "6.4.7.GA"
+      value: "6.4.8.GA"
 envs:
     - name: "JBOSS_PRODUCT"
       value: "datavirt"
     - name: "JBOSS_DATAVIRT_VERSION"
-      value: "6.4.7.GA"
+      value: "6.4.8.GA"
     - name: "PRODUCT_VERSION"
-      value: "6.4.7.GA"
+      value: "6.4.8.GA"
 packages:
   content_sets_file: content_sets.yml
 modules:
@@ -33,9 +33,9 @@ artifacts:
     - name: jboss-dv-6.4.6-patch
       target: jboss-dv-6.4.6-patch.jar
       md5: a595781c29da6a933572642bc7476a23
-    - name: jboss-dv-6.4.7-patch
-      target: jboss-dv-6.4.7-patch.jar
-      md5: d1d7ef8f145c71db958ae0919f8affaa
+    - name: jboss-dv-6.4.8-patch
+      target: jboss-dv-6.4.8-patch.jar
+      md5: 4580cd06952d557ba3b4f0be0609d0cc
     - name: jboss-datagrid-7.3.1-eap-modules.zip 
       md5: f12e3dec0b9e05ff883958ec1c52ad0d
       description: "Red Hat JBoss Data Grid 7.3 EAP Modules and JDG Client"
