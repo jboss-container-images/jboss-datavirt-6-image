@@ -3,7 +3,7 @@ schema_version: 1
 name: "jboss-datavirt-6/datavirt64"
 description: "Red Hat JBoss Data Virtualization 6.4 container image"
 version: "6.4.8"
-from: "jboss-eap-6/eap64:6.4.23-3.1608870027"
+from: "jboss-eap-6/eap64:6.4.23-4"
 labels:
     - name: "com.redhat.component"
       value: "jboss-datavirt-6-datavirt64-container"
